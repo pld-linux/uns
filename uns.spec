@@ -7,6 +7,7 @@ Group:		Daemons
 Source0:	http://dl.sourceforge.net/openamt/%{name}-%{version}.tar.gz
 # Source0-md5:	c20cba1e38e86ed7aa56bdd749ecff53
 Source1:	%{name}.init
+Patch0:		%{name}-build.patch
 URL:		http://www.openamt.org/
 BuildRequires:	curl-devel
 BuildRequires:	gsoap
@@ -28,9 +29,11 @@ Defense policies are applied by the ME FW.
 
 %prep
 %setup -q -n UNS-%{version}
+%patch0 -p1
 
 %build
-%configure
+%configure \
+	CPPFLAGS="%{rpmcppflags} -I/usr/include/openwsman"
 
 %{__make}
 

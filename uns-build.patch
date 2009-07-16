@@ -1,0 +1,30 @@
+--- UNS-5.0.0.30/CryptUtils.cpp~	2009-07-16 10:02:28.246381051 +0200
++++ UNS-5.0.0.30/CryptUtils.cpp	2009-07-16 10:03:00.159697186 +0200
+@@ -49,6 +49,7 @@
+ #endif
+ #include "CryptUtils.h"
+ #include <string>
++#include <string.h>
+ #ifdef _WIN32
+ 	#include <objbase.h>
+ 	#include <process.h>
+--- UNS-5.0.0.30/LinuxEventLog.cpp~	2008-07-08 12:50:36.000000000 +0200
++++ UNS-5.0.0.30/LinuxEventLog.cpp	2009-07-16 10:05:31.663687765 +0200
+@@ -44,6 +44,7 @@
+ #include "LinuxEventLog.h"
+ #include "EventMessages.h"
+ 
++#include <cstdio>
+ #include <cstdlib>
+ #include <cstring>
+ #include <unistd.h>
+--- UNS-5.0.0.30/Options.h~	2008-07-08 12:50:36.000000000 +0200
++++ UNS-5.0.0.30/Options.h	2009-07-16 10:09:13.126952354 +0200
+@@ -50,6 +50,7 @@
+ #ifndef _OPTIONS_H
+ #define _OPTIONS_H
+ 
++#include <cstdio>
+ #include <map>
+ #include <vector>
+ 
